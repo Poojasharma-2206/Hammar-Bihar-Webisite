@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamara Bihar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <style>
+      /* Global Styles */
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #e4f1e1;
+        color: #333;
+        scroll-behavior: smooth; /* Smooth scroll */
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: #b5ead7;
+      }
+
+      .navbar-brand {
+        font-size: 1.8rem;
+        color: #333;
+      }
+
+      .navbar .nav-link {
+        color: #333 !important;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .navbar .nav-link:hover {
+        color: #ff6f61 !important; /* subtle hover */
+      }
+
+      .navbar ul {
+        gap: 3rem;
+        font-size: larger;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: url("https://images.unsplash.com/photo-1629561918009-339e516be72f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmloYXJ8ZW58MHx8MHx8fDA%3D")
+          no-repeat center center/cover;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 2px 2px 8px black;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: bold;
+      }
+
+      .hero p {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+      }
+
+      /* Buttons */
+      .btn-custom {
+        background-color: #ffdac1;
+        border: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .btn-custom:hover {
+        background-color: #ffb6b9;
+        transform: scale(1.05);
+      }
+
+      /* Sections */
+      section {
+        padding: 60px 0;
+      }
+
+      /* Culture */
+      #culture h2 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+
+      #culture p {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 3rem;
+      }
+
+      /* Cards */
+      .card {
+        border: none;
+        border-radius: 12px;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .card img {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .card-text {
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      /* Tourism Section */
+      #tourism {
+        background-color: #fdf1f1;
+      }
+
+      #tourism h2 {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* Food Section */
+      #food ul li {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Contact Section */
+      #contact {
+        background-color: #b5ead7;
+      }
+
+      #contact input,
+      #contact textarea {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      #contact button {
+        border-radius: 8px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #c7ceea;
+        color: #333;
+        padding: 15px 0;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+        .card img {
+          height: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">हम्मर BIHAR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#history">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#culture">Culture</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tourism">Tourism</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#food">Food</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero text-center">
+      <div>
+        <h1>हम्मर Bihar</h1>
+        <p>Land of History, Heritage, and Culture</p>
+        <a
+          href="https://en.wikipedia.org/wiki/Bihar"
+          class="btn btn-custom btn-lg"
+          >Explore</a
+        >
+      </div>
+    </section>
+
+    <!-- Culture -->
+    <section id="culture" class="container text-center">
+      <h2>Culture of Bihar</h2>
+      <p>
+        Bihar is rich in traditions like Chhath Puja, Madhubani painting, folk
+        dances, and classical music.
+      </p>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="./images/madhubanipainting.jpg"
+              class="card-img-top rounded-top"
+              alt="Madhubani Painting"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Madhubani Painting</h5>
+              <p class="card-text">
+                Traditional folk art style famous worldwide.
+              </p>
+              <a
+                href="https://en.wikipedia.org/wiki/Madhubani_art"
+                class="btn btn-custom"
+                >Know More</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="./images/chatth.jpg"
+              class="card-img-top rounded-top"
+              alt="Chhath Puja"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Chhath Puja</h5>
+              <p class="card-text">A unique festival dedicated to Sun God.</p>
+              <a
+                href="https://en.wikipedia.org/wiki/Chhath"
+                class="btn btn-custom"
+                >Know More</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="./images/folk dance.jpg"
+              class="card-img-top rounded-top"
+              alt="Folk Dance"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Folk Dance</h5>
+              <p class="card-text">
+                Vibrant traditional dances like Jat-Jatin.
+              </p>
+              <a
+                href="https://en.wikipedia.org/wiki/Category:Folk_dances_of_Bihar"
+                class="btn btn-custom"
+                >Know More</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="./images/music.jpg"
+              class="card-img-top rounded-top"
+              alt="Classical Music"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Classical Music</h5>
+              <p class="card-text">
+                Rich heritage of classical and folk music.
+              </p>
+              <a
+                href="https://en.wikipedia.org/wiki/Music_of_Bihar"
+                class="btn btn-custom"
+                >Know More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tourism -->
+    <section id="tourism" class="container text-center">
+      <h2>Tourist Attractions</h2>
+      <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+          <div class="card p-3 shadow-sm">
+            <a href="https://en.wikipedia.org/wiki/Bodh_Gaya"
+              ><img
+                src="./images/gaya.jpg"
+                class="card-img-top rounded"
+                alt="Bodh Gaya"
+            /></a>
+            <h5 class="mt-3">Bodh Gaya</h5>
+            <p>
+              Lord Buddha attained enlightenment here. UNESCO World Heritage
+              Site.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card p-3 shadow-sm">
+            <a href="https://en.wikipedia.org/wiki/Nalanda_mahavihara"
+              ><img
+                src="./images/nalanda.jpg"
+                class="card-img-top rounded"
+                alt="Nalanda"
+            /></a>
+            <h5 class="mt-3">Nalanda</h5>
+            <p>
+              One of the world’s oldest universities, center of knowledge and
+              learning.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card p-3 shadow-sm">
+            <a href="https://en.wikipedia.org/wiki/Takht_Sri_Patna_Sahib"
+              ><img
+                src="./images/Patna_Sahib.jpg"
+                class="card-img-top rounded"
+                alt="Patna Sahib"
+            /></a>
+            <h5 class="mt-3">Patna Sahib</h5>
+            <p>
+              Birthplace of Guru Gobind Singh Ji, an important Sikh pilgrimage
+              site.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Food -->
+    <!-- Food Section -->
+    <section id="food" class="container text-center my-5">
+      <h2 class="mb-4">Famous Foods</h2>
+      <div class="row justify-content-center g-4">
+        <!-- Food 1: Litti Chokha -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="https://www.vegrecipesofindia.com/litti-chokha-recipe/"
+              ><img
+                src="./images/litti.jpg"
+                class="card-img-top rounded-top food-img"
+                alt="Litti Chokha"
+                data-bs-toggle="modal"
+                data-bs-target="#littiModal"
+                style="margin: 10px 0px 0px 0px; padding: 0px 10px 0px 10px"
+            /></a>
+            <div class="card-body">
+              <h5 class="card-title">Litti Chokha</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food 2: Thekua -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="https://www.vegrecipesofindia.com/thekua-recipe/"
+              ><img
+                src="./images/thekua.jpg"
+                class="card-img-top rounded-top food-img"
+                alt="Thekua"
+                data-bs-toggle="modal"
+                data-bs-target="#thekuaModal"
+                style="margin: 10px 0px 0px 0px; padding: 0px 10px 0px 10px"
+            /></a>
+            <div class="card-body">
+              <h5 class="card-title">Thekua</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food 3: Khaja -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="https://cookpad.com/in-hi/recipes/13788505">
+              <img
+                src="./images/khaja.jpg"
+                class="card-img-top rounded-top food-img"
+                alt="Khaja"
+                data-bs-toggle="modal"
+                data-bs-target="#khajaModal"
+                style="margin: 10px 0px 0px 0px; padding: 0px 10px 0px 10px"
+            /></a>
+            <div class="card-body">
+              <h5 class="card-title">Khaja</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food 4: Dal Pitha -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm border-0">
+            <a
+              href="https://www.jhajistore.com/blogs/bhansa-ghar-traditional-east-indian-recipes/dal-peethi-dal-dulhan?srsltid=AfmBOopiCarEP5l5aIorkpcQcFheGE9PyGXPUeUU2kQFHavPsszKVCNP"
+            >
+              <img
+                src="./images/daal pitha.jpg"
+                class="card-img-top rounded-top food-img"
+                alt="Dal Pitha"
+                data-bs-toggle="modal"
+                data-bs-target="#dalpithaModal"
+                style="margin: 10px 0px 0px 0px; padding: 0px 10px 0px 10px"
+            /></a>
+            <div class="card-body">
+              <h5 class="card-title">Dal Pithi</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food 5: Stuffed Dal Pitha -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm border-0">
+            <a
+              href="https://www.jhajistore.com/blogs/bhansa-ghar-traditional-east-indian-recipes/bihari-dal-pitha-recipe?srsltid=AfmBOor96M_sefXPoBplAubMgUQuuzHr6VpIQEJ9DKBwhi29R7-Becp2"
+              ><img
+                src="./images/stuffed daal pitha.jpg"
+                class="card-img-top rounded-top food-img"
+                alt="Stuffed Dal Pitha"
+                data-bs-toggle="modal"
+                data-bs-target="#stuffeddalpithaModal"
+                style="margin: 10px 0px 0px 0px; padding: 0px 10px 0px 10px"
+            /></a>
+
+            <div class="card-body">
+              <h5 class="card-title">Stuffed Dal Pitha</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modals -->
+      <!-- Litti Modal -->
+      <div class="modal fade" id="littiModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Litti Chokha</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="./images/litti.jpg" class="img-fluid mb-3" />
+              <p>
+                A traditional dish of roasted wheat balls served with mashed
+                vegetables.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thekua Modal -->
+      <div class="modal fade" id="thekuaModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Thekua</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="./images/thekua.jpg" class="img-fluid mb-3" />
+              <p>
+                A sweet deep-fried cookie made during festivals like Chhath.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Khaja Modal -->
+      <div class="modal fade" id="khajaModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Khaja</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="./images/khaja.jpg" class="img-fluid mb-3" />
+              <p>
+                Layered, sweet pastry famous in Bihar, crunchy and delicious.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dal Pitha Modal -->
+      <div class="modal fade" id="dalpithaModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Dal Pitha</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="./images/daal pitha.jpg" class="img-fluid mb-3" />
+              <p>
+                Steamed dumplings stuffed with spiced lentils, a traditional
+                snack.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stuffed Dal Pitha Modal -->
+      <div class="modal fade" id="stuffeddalpithaModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Stuffed Dal Pitha</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img
+                src="./images/stuffed daal pitha.jpg"
+                class="img-fluid mb-3"
+              />
+              <p>
+                Steamed dumplings stuffed with spiced lentils, a traditional
+                snack.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="text-center">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form class="w-75 mx-auto mt-4">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Your Name" />
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+          <button class="btn btn-custom w-100">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <p>&copy; 2025 Hammer Bihar | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
